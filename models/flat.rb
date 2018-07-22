@@ -2,8 +2,8 @@ require_relative( '../db/sql_runner' )
 
 class Flat
 
-  attr_reader( :id, :location, :avalible_space, :animal_friendly, :smokers_friendly )
-  
+  attr_reader( :id )
+  attr_accessor( :location, :avalible_space, :animal_friendly, :smokers_friendly)
   def initialize ( options )
     @id = options['id'].to_i if options['id']
     @location = options['location']
@@ -47,7 +47,7 @@ class Flat
         $1, $2, $3, $4
       )
       WHERE id = $5"
-      values = [@location, @avalible_space, @animal_firendly, @smokers_firendly]
+      values = [@location, @avalible_space, @animal_firendly, @smokers_firendly, @id]
       SqlRunner.run(sql, values)
     end
 
