@@ -51,30 +51,30 @@ class Flat
       SqlRunner.run(sql, values)
     end
 
-    def delete()
-      sql = "DELETE FROM flats
-      WHERE id = $1"
-      values = [@id]
-      SqlRunner.run(sql, values)
-    end
-
-    def self.all()
-      sql = "SELECT * FROM flats"
-      results = SqlRunner.run( sql )
-      return results.map { |hash| Flat.new( hash ) }
-    end
-
-    def self.find( id )
-      sql = "SELECT * FROM flats
-      WHERE id = $1"
-      values = [id]
-      results = SqlRunner.run( sql, values )
-      return Flat.new( results.first )
-    end
-
-    def self.delete_all
-      sql = "DELETE FROM flats"
-      SqlRunner.run( sql )
-    end
+    # def delete()
+    #   sql = "DELETE FROM flats
+    #   WHERE id = $1"
+    #   values = [@id]
+    #   SqlRunner.run(sql, values)
+    # end
+    #
+    # def self.all()
+    #   sql = "SELECT * FROM flats"
+    #   results = SqlRunner.run( sql )
+    #   return results.map { |hash| Flat.new( hash ) }
+    # end
+    #
+    # def self.find( id )
+    #   sql = "SELECT * FROM flats
+    #   WHERE id = $1"
+    #   values = [id]
+    #   results = SqlRunner.run( sql, values )
+    #   return Flat.new( results.first )
+    # end
+    #
+    # def self.delete_all
+    #   sql = "DELETE FROM flats"
+    #   SqlRunner.run( sql )
+    # end
 
   end
