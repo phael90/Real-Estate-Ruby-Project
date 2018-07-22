@@ -27,9 +27,10 @@ class FlatMatch
     @id = results.first()['id'].to_i
   end
 
-  def find()
-    tenant = Tenant.find(@flat_id)
-    return house
+  def tenant()
+    sql = "SELECT * FROM tenants WHERE id = $1"
+    tenant = Tenant.find(@tenant_id)
+    return tenant
   end
 
   def update()

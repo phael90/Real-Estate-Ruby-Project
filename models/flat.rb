@@ -31,7 +31,10 @@ class Flat
   end
 
   def tenants()
-
+    sql = "SELECT * FROM tenants WHERE flat_id = $1"
+    values = [@id]
+    results = SqlRunner.run( sql, values )
+    return results.map { |hash| Tenant.new( hash ) }
   end
 
   def update()
@@ -71,7 +74,7 @@ class Flat
       results = SqlRunner.run( sql, values )
       return Flat.new( results.first )
     end
-    
+
     def self.delete_all
       sql = "DELETE FROM flats"
       SqlRunner.run( sql )
