@@ -91,18 +91,18 @@ class Tenant
       results = SqlRunner.run( sql )
       return results.map { |hash| Tenant.new( hash ) }
     end
-    #
-    # def self.find( id )
-    #   sql = "SELECT * FROM tenants
-    #   WHERE id = $1"
-    #   values = [id]
-    #   results = SqlRunner.run( sql, values )
-    #   return Tenant.new( results.first )
-    # end
-    #
-    # def self.delete_all
-    #   sql = "DELETE FROM tenants"
-    #   SqlRunner.run( sql )
-    # end
+
+    def self.find( id )
+      sql = "SELECT * FROM tenants
+      WHERE id = $1"
+      values = [id]
+      results = SqlRunner.run( sql, values )
+      return Tenant.new( results.first )
+    end
+    
+    def self.delete_all
+      sql = "DELETE FROM tenants"
+      SqlRunner.run( sql )
+    end
 
   end

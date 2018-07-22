@@ -60,18 +60,18 @@ class FlatMatch
       return results.map { |hash| FlatMatch.new( hash ) }
     end
 
-    # def self.find( id )
-    #   sql = "SELECT * FROM flat_match
-    #   WHERE id = $1"
-    #   values = [id]
-    #   results = SqlRunner.run( sql, values )
-    #   return flat_match.new( results.first )
-    # end
-    #
-    # def self.delete_all
-    #   sql = "DELETE FROM flat_match"
-    #   SqlRunner.run( sql )
-    # end
+    def self.find( id )
+      sql = "SELECT * FROM flat_matches
+      WHERE id = $1"
+      values = [id]
+      results = SqlRunner.run( sql, values )
+      return FlatMatch.new( results.first )
+    end
+
+    def self.delete_all
+      sql = "DELETE FROM flat_matches"
+      SqlRunner.run( sql )
+    end
 
 
 end
