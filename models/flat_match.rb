@@ -53,13 +53,13 @@ class FlatMatch
       values = [@id]
       SqlRunner.run(sql, values)
     end
-    #
-    # def self.all()
-    #   sql = "SELECT * FROM flat_match"
-    #   results = SqlRunner.run( sql )
-    #   return results.map { |hash| flat_match.new( hash ) }
-    # end
-    #
+
+    def self.all()
+      sql = "SELECT * FROM flat_matches"
+      results = SqlRunner.run( sql )
+      return results.map { |hash| FlatMatch.new( hash ) }
+    end
+
     # def self.find( id )
     #   sql = "SELECT * FROM flat_match
     #   WHERE id = $1"

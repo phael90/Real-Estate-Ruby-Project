@@ -57,12 +57,12 @@ class Flat
       values = [@id]
       SqlRunner.run(sql, values)
     end
-    #
-    # def self.all()
-    #   sql = "SELECT * FROM flats"
-    #   results = SqlRunner.run( sql )
-    #   return results.map { |hash| Flat.new( hash ) }
-    # end
+    
+    def self.all()
+      sql = "SELECT * FROM flats"
+      results = SqlRunner.run( sql )
+      return results.map { |hash| Flat.new( hash ) }
+    end
     #
     # def self.find( id )
     #   sql = "SELECT * FROM flats

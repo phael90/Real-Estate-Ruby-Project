@@ -85,12 +85,12 @@ class Tenant
       values = [@id]
       SqlRunner.run(sql, values)
     end
-    #
-    # def self.all()
-    #   sql = "SELECT * FROM tenants"
-    #   results = SqlRunner.run( sql )
-    #   return results.map { |hash| Tenant.new( hash ) }
-    # end
+
+    def self.all()
+      sql = "SELECT * FROM tenants"
+      results = SqlRunner.run( sql )
+      return results.map { |hash| Tenant.new( hash ) }
+    end
     #
     # def self.find( id )
     #   sql = "SELECT * FROM tenants
