@@ -47,12 +47,12 @@ class FlatMatch
       SqlRunner.run(sql, values)
     end
 
-    # def delete()
-    #   sql = "DELETE FROM flat_match
-    #   WHERE id = $1"
-    #   values = [@id]
-    #   SqlRunner.run(sql, values)
-    # end
+    def delete()
+      sql = "DELETE FROM flat_matches
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
     #
     # def self.all()
     #   sql = "SELECT * FROM flat_match"
