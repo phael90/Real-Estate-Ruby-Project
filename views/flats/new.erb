@@ -1,0 +1,27 @@
+<h1>sign up form</h1>
+<div class="signup-page-form">
+  <form id="page-main-id" class="sign-up-form" action="/flats" method="POST">
+
+    <label for="location"></label>
+    <input type="text" placeholder="Location" name="location">
+
+    <label for="avalible_space"></label>
+    <input type="number" placeholder="Number of rooms" name="avalible_space">
+
+    <label for="animal"></label>
+    <select name="animal" placeholder="Is the flat animal friendly?" id="animal">
+      <option disabled selected value="nill">Is the flat animal friendly?</option>
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select>
+
+    <label for="smoke"></label>
+    <select name="smoke" placeholder="Is the flat smokers friendly?" id="smoke-select">
+      <option disabled selected value="nill">Is the flat smokers friendly?</option>
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select>
+    
+    <input type="submit" value="Create account">
+  </form>
+  </div>
