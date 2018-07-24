@@ -8,3 +8,7 @@ require_relative( './controllers/rentals_controller.rb' )
 get '/' do
   erb( :index )
 end
+#added admin controller instead creating additional files
+get '/admin' do
+  erb( :admin )
+end
