@@ -8,7 +8,7 @@ class Flat
     @id = options['id'].to_i if options['id']
     @location = options['location']
     @available_space = options['available_space'].to_i if options['available_space']
-    @animal_firendly = options['animal_firendly']
+    @animal_friendly = options['animal_friendly']
     @smokers_friendly = options['smokers_friendly']
   end
 
@@ -25,7 +25,7 @@ class Flat
       $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@location, @available_space, @animal_firendly, @smokers_firendly]
+    values = [@location, @available_space, @animal_friendly, @smokers_friendly]
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
@@ -50,7 +50,7 @@ class Flat
         $1, $2, $3, $4
       )
       WHERE id = $5"
-      values = [@location, @available_space, @animal_firendly, @smokers_firendly, @id]
+      values = [@location, @available_space, @animal_friendly, @smokers_friendly, @id]
       SqlRunner.run(sql, values)
     end
 

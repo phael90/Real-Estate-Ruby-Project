@@ -1,22 +1,22 @@
 <h1>Edit form</h1>
 <div class="signup-page-form">
-  <form id="page-main-id" class="sign-up-form" action="/flats" method="POST">
+  <form id="page-main-id" class="sign-up-form" action="/flats/<%=@flat.id()%>" method="POST">
 
-    <label for="preferred_location"></label>
-    <input type="text" placeholder="Location" name="preferred_location" value="<%= @flat.preferred_location%>">
+    <label for="location"></label>
+    <input type="text" placeholder="Location" name="location" value="<%= @flat.location%>">
 
     <label for="available_space"></label>
     <input type="number" placeholder="Number of rooms" name="available_space" value="<%= @flat.available_space%>">
 
-    <label for="animal"></label>
-    <select name="animal" placeholder="Is the flat animal friendly?" id="animal">
-      <option disabled selected value="nill">Is the flat animal friendly?</option>
+    <label for="animal_friendly"></label>
+    <select name="animal_friendly" placeholder="Is the flat animal friendly?" id="animal_friendly">
+      <option disabled selected value="nill">Is the flat friendly?</option>
       <option value="false">No</option>
       <option value="true">Yes</option>
     </select>
 
     <label for="smoke"></label>
-    <select name="smoke" placeholder="Is the flat smokers friendly?" id="smoke-select">
+    <select name="smokers_friendly" placeholder="Is the flat smokers friendly?" id="smoke-select">
       <option disabled selected value="nill">Is the flat smokers friendly?</option>
       <option value="false">No</option>
       <option value="true">Yes</option>

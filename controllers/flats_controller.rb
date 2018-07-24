@@ -29,6 +29,7 @@ end
 #update
 post '/flats/:id' do
   @flat = Flat.new(params)
+  p @flat
   @flat.update()
   redirect to "flats/#{params['id']}"
 end
