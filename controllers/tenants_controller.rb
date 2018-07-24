@@ -37,22 +37,6 @@ post '/tenants/:id' do
   redirect to "tenants/#{params['id']}"
 end
 
-
-
-# # edit
-# get '/students/:id/edit' do
-#   @houses = House.all()
-#   @student = Student.find(params['id'])
-#   erb( :edit)
-# end
-#
-# # update
-# post '/students/:id' do
-#   student = Student.new( params )
-#   student.update()
-#   redirect to "students/" + params['id']
-# end
-
 #show
 get '/tenants/:id' do
   @tenant = Tenant.find(params['id'].to_i)
