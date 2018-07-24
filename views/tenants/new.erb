@@ -1,6 +1,6 @@
 <h1>Tenant sign up form</h1>
 <div class="signup-page-form">
-  <form id="page-main-id" class="sign-up-form" action="/tenants" method="POST">
+  <form class="sign-up-form" action="/tenants" method="POST">
 
     <label for="first_name"></label>
     <input type="text" placeholder="First name" name="first_name">
@@ -12,7 +12,7 @@
     <input type="number" placeholder="Age" name="age"><br>
 
     <label for="nationality"></label>
-    <select name="nationality" placeholder="Nationality" id="nationality-select">
+    <select name="nationality" placeholder="Nationality" class="nationality-select">
       <option disabled selected value="nill">Nationality</option>
       <option value="AF">Afghanistan</option>
       <option value="AX">Åland Islands</option>
@@ -266,7 +266,7 @@
     </select>
 
     <label for="gender"></label>
-    <select name="gender" placeholder="Gender" id="gender">
+    <select name="gender" placeholder="Gender" class="gender">
       <option disabled selected value="nill">Gender</option>
       <option value="male">Male</option>
       <option value="female">Female</option>
