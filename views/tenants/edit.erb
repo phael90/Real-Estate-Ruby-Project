@@ -1,6 +1,6 @@
 <h1>Edit form</h1>
 <div class="signup-page-form">
-  <form id="page-main-id" class="sign-up-form" action="/tenants" method="POST">
+  <form id="page-main-id" class="sign-up-form" action="/tenants/<%=@tenant.id()%>" method="POST">
 
     <label for="first_name"></label>
     <input type="text" placeholder="First name" name="first_name" value="<%= @tenant.first_name%>">
@@ -299,7 +299,7 @@
       <option value="false">No</option>
       <option value="true">Yes</option>
     </select>
-
+    
     <label for="can_live_with_smokers"></label>
     <select name="can_live_with_smokers" placeholder="Can you live with smokersrs?" id="can_live_with_smokers-select">
       <option disabled selected value="nill">Can you live with smokers?</option>
@@ -307,7 +307,7 @@
       <option value="true">Yes</option>
     </select>
 
-    <input type="submit" value="Create account">
+    <input type="submit" value="Save changes">
   </form>
 </div>
 <!-- <meta http-equiv="refresh" content="3;url=/" /> -->
