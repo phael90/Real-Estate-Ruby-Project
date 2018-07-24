@@ -10,9 +10,9 @@
 
     <label for="animal_friendly"></label>
     <select name="animal_friendly" placeholder="Is the flat animal friendly?" id="animal_friendly">
-      <option disabled selected value="nill">Is the flat friendly?</option>
-      <option value="false">No</option>
-      <option value="true">Yes</option>
+      <% for animal_answer in @animal_friendly %>
+      <option value="<%=animal_answer%>" <%= 'selected' if @flat.animal_friendly == animal_answer%>><%=animal_answer%></option>
+      <%end%>
     </select>
 
     <label for="smoke"></label>

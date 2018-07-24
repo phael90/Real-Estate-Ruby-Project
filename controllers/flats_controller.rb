@@ -23,7 +23,9 @@ end
 
 #edit
 get '/flats/:id/edit' do
+  @animal_friendly = ["Yes", "No"]
   @flat = Flat.find(params['id'])
+  @flat.update
   erb(:"flats/edit")
 end
 

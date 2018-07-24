@@ -11,11 +11,6 @@
     <label for="age"></label>
     <input type="number" placeholder="Age" name="age" value="<%= @tenant.age%>">
 
-
-
-
-
-
     <label for="nationality"></label>
     <select name="nationality" placeholder="Nationality" class="nationality-select">
       <% for nationality in @nationalities %>
@@ -23,17 +18,11 @@
       <%end%>
     </select>
 
-
-
-
-
-
     <label for="gender"></label>
     <select name="gender" placeholder="Gender" class="gender">
-      <option disabled selected value="nill">Gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="prefer_not_to_say">Prefer not to say</option>
+      <% for gender in @genders %>
+      <option value="<%=gender%>" <%= 'selected' if @tenant.gender == gender%>><%=gender%></option>
+      <%end%>
     </select>
 
     <label for="preferred_location"></label>
@@ -43,31 +32,31 @@
     <input type="text" placeholder="Your profession" name="profession" value="<%= @tenant.profession%>">
 
     <label for="animal"></label>
-    <select name="animal" placeholder="Do you have an animal?" id="animal">
-      <option disabled selected value="nill">Do you have an animal?</option>
-      <option value="false">No</option>
-      <option value="true">Yes</option>
+    <select name="animal" placeholder="Do you have an animal?" class="animal">
+      <% for animal in @animals %>
+      <option value="<%=animal%>" <%= 'selected' if @tenant.animal == animal%>><%=animal%></option>
+      <%end%>
     </select>
 
     <label for="can_live_with_animal"></label>
     <select name="can_live_with_animal" placeholder="Can you live with an animals?" id="can_live_with_animals">
-      <option disabled selected value="nill">Can you live with an animals?</option>
-      <option value="false">No</option>
-      <option value="true">Yes</option>
+      <% for can_live_with_animal in @can_live_with_animals %>
+      <option value="<%=can_live_with_animal%>" <%= 'selected' if @tenant.can_live_with_animal == can_live_with_animal%>><%=can_live_with_animal%></option>
+      <%end%>
     </select>
 
     <label for="smoke"></label>
     <select name="smoke" placeholder="Are you a smoker?" id="smoke-select">
-      <option disabled selected value="<%= @tenant.smoke%>">Are you a smoker?</option>
-      <option value="false">No</option>
-      <option value="true">Yes</option>
+      <% for smoke in @smokes %>
+      <option value="<%=smoke%>" <%= 'selected' if @tenant.smoke == smoke%>><%=smoke%></option>
+      <%end%>
     </select>
 
     <label for="can_live_with_smokers"></label>
     <select name="can_live_with_smokers" placeholder="Can you live with smokersrs?" id="can_live_with_smokers-select">
-      <option disabled selected value="nill">Can you live with smokers?</option>
-      <option value="false">No</option>
-      <option value="true">Yes</option>
+      <% for can_live_with_smoker in @can_live_with_smokers %>
+      <option value="<%=can_live_with_smoker%>" <%= 'selected' if @tenant.can_live_with_smokers == can_live_with_smoker%>><%=can_live_with_smoker%></option>
+      <%end%>
     </select>
 
     <input type="submit" value="Save changes">

@@ -277,6 +277,11 @@ get '/tenants/:id/edit' do
   "Yemen",
   "Zambia",
   "Zimbabwe"]
+  @genders = ["Male", "Female", "Other"]
+  @animals = ["Yes", "No"]
+  @can_live_with_animals = ["Yes", "No"]
+  @smokes = ["Yes", "No"]
+  @can_live_with_smokers = ["Yes", "No"]
   @tenant = Tenant.find(params['id'])
   @tenant.update
   erb(:"tenants/edit")
