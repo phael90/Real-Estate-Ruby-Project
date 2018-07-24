@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/flat.rb' )
+also_reload('./models/*')
 
 #index
 get '/flats' do
