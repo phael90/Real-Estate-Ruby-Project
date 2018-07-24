@@ -1,12 +1,12 @@
-<h1>sign up form</h1>
+<h1>Edit form</h1>
 <div class="signup-page-form">
   <form id="page-main-id" class="sign-up-form" action="/flats" method="POST">
 
-    <label for="location"></label>
-    <input type="text" placeholder="Location" name="location">
+    <label for="preferred_location"></label>
+    <input type="text" placeholder="Location" name="preferred_location" value="<%= @flat.preferred_location%>">
 
     <label for="available_space"></label>
-    <input type="number" placeholder="Number of rooms" name="available_space">
+    <input type="number" placeholder="Number of rooms" name="available_space" value="<%= @flat.available_space%>">
 
     <label for="animal"></label>
     <select name="animal" placeholder="Is the flat animal friendly?" id="animal">
@@ -22,6 +22,6 @@
       <option value="true">Yes</option>
     </select>
 
-    <input type="submit" value="Create account">
+    <input type="submit" value="Edit account">
   </form>
   </div>

@@ -3,11 +3,11 @@ require_relative( '../db/sql_runner' )
 class Flat
 
   attr_reader( :id )
-  attr_accessor( :location, :avalible_space, :animal_friendly, :smokers_friendly)
+  attr_accessor( :location, :available_space, :animal_friendly, :smokers_friendly)
   def initialize ( options )
     @id = options['id'].to_i if options['id']
     @location = options['location']
-    @avalible_space = options['avalible_space'].to_i if options['avalible_space']
+    @available_space = options['available_space'].to_i if options['available_space']
     @animal_firendly = options['animal_firendly']
     @smokers_friendly = options['smokers_friendly']
   end
@@ -16,7 +16,7 @@ class Flat
     sql = "INSERT INTO flats
     (
       location,
-      avalible_space,
+      available_space,
       animal_friendly,
       smokers_friendly
     )
@@ -25,7 +25,7 @@ class Flat
       $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@location, @avalible_space, @animal_firendly, @smokers_firendly]
+    values = [@location, @available_space, @animal_firendly, @smokers_firendly]
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
@@ -42,7 +42,7 @@ class Flat
     SET
     (
       location,
-      avalible_space,
+      available_space,
       animal_friendly,
       smokers_friendly
       ) =
@@ -50,7 +50,7 @@ class Flat
         $1, $2, $3, $4
       )
       WHERE id = $5"
-      values = [@location, @avalible_space, @animal_firendly, @smokers_firendly, @id]
+      values = [@location, @available_space, @animal_firendly, @smokers_firendly, @id]
       SqlRunner.run(sql, values)
     end
 

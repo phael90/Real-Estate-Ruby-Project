@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 class Tenant
 
   attr_reader( :id )
-  attr_accessor( :first_name, :last_name, :age, :nationality, :gender, :preferred_location, :animal, :can_live_with_animal, :smoke, :can_live_with_smokers)
+  attr_accessor( :first_name, :last_name, :age, :nationality, :gender, :preferred_location,:profession, :animal, :can_live_with_animal, :smoke, :can_live_with_smokers)
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -99,7 +99,7 @@ class Tenant
       results = SqlRunner.run( sql, values )
       return Tenant.new( results.first )
     end
-    
+
     def self.delete_all
       sql = "DELETE FROM tenants"
       SqlRunner.run( sql )

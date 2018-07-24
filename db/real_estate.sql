@@ -6,7 +6,7 @@ CREATE TABLE flats
 (
 id SERIAL8 PRIMARY KEY,
 location VARCHAR(255),
-avalible_space VARCHAR(255),
+available_space VARCHAR(255),
 animal_friendly VARCHAR(255),
 smokers_friendly VARCHAR(255)
 );

@@ -12,21 +12,21 @@ require ( 'pry-byebug' )
 
 flat_1 = Flat.new({
   "location" => "Edinburgh",
-  "avalible_space" => "1",
+  "available_space" => "1",
   "animal_friendly" => "true",
   "smokers_friendly" => "true"
   })
 
 flat_2 = Flat.new({
   "location" => "New York City",
-  "avalible_space" => "2",
+  "available_space" => "2",
   "animal_friendly" => "false",
   "smokers_friendly" => "false"
 })
 
 flat_3 = Flat.new({
   "location" => "Barcelona",
-  "avalible_space" => "3",
+  "available_space" => "3",
   "animal_friendly" => "true",
   "smokers_friendly" => "false"
 })
