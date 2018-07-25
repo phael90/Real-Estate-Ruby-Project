@@ -7,8 +7,8 @@ CREATE TABLE flats
 id SERIAL8 PRIMARY KEY,
 location VARCHAR(255),
 available_space VARCHAR(255),
-animal_friendly VARCHAR(255),
-smokers_friendly VARCHAR(255)
+animal_friendly BOOLEAN,
+smokers_friendly BOOLEAN
 );
 
 CREATE TABLE tenants
@@ -21,10 +21,10 @@ CREATE TABLE tenants
   gender VARCHAR(255),
   preferred_location VARCHAR(255),
   profession VARCHAR(255),
-  animal VARCHAR(255),
-  can_live_with_animal VARCHAR(255),
-  smoke VARCHAR(255),
-  can_live_with_smokers VARCHAR(255),
+  animal BOOLEAN,
+  can_live_with_animal BOOLEAN,
+  smoke BOOLEAN,
+  can_live_with_smokers BOOLEAN,
   flat_id INT8 REFERENCES flats(id)
 );
 

@@ -52,8 +52,8 @@ tenant_1 = Tenant.new({
   "profession" => "student",
   "animal" => "true",
   "can_live_with_animal" => "true",
-  "smoke" => "yes",
-  "can_live_with_smokers" => "yes",
+  "smoke" => "true",
+  "can_live_with_smokers" => "true",
   "flat_id" => flat_1.id
 })
 
@@ -67,8 +67,8 @@ tenant_2 = Tenant.new({
   "profession" => "freelancer",
   "animal" => "true",
   "can_live_with_animal" => "true",
-  "smoke" => "yes",
-  "can_live_with_smokers" => "yes",
+  "smoke" => "true",
+  "can_live_with_smokers" => "true",
   "flat_id" => flat_1.id
 })
 
@@ -82,8 +82,8 @@ tenant_3 = Tenant.new({
   "profession" => "freelancer",
   "animal" => "true",
   "can_live_with_animal" => "true",
-  "smoke" => "yes",
-  "can_live_with_smokers" => "yes",
+  "smoke" => "true",
+  "can_live_with_smokers" => "true",
   "flat_id" => flat_1.id
 })
 
