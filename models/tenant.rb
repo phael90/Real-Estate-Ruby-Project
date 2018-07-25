@@ -105,4 +105,11 @@ class Tenant
       SqlRunner.run( sql )
     end
 
+    def yes_no(value)
+      if value == "t"
+        return "Yes"
+      elsif value == "f"
+        return "No"
+      end
+    end
   end

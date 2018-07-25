@@ -80,4 +80,11 @@ class Flat
       SqlRunner.run( sql )
     end
 
+    def yes_no(value)
+      if value == "true"
+        return "Yes"
+      elsif value == "false"
+        return "No"
+      end
+    end
   end
