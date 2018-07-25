@@ -24,6 +24,7 @@ end
 #edit
 get '/flats/:id/edit' do
   @animal_friendly = ["Yes", "No"]
+  @smokers_friendly = ["Yes", "No"]
   @flat = Flat.find(params['id'])
   @flat.update
   erb(:"flats/edit")
@@ -40,4 +41,12 @@ end
 get '/flats/:id' do
   @flats = Flat.find(params['id'].to_i)
   erb(:"flats/show")
+end
+
+# destroy
+post '/flats/:id/delete' do
+  flat = Flat.new(params)
+  flat.delete()
+  redirect to '/'
+    #where to direct after delete???
 end

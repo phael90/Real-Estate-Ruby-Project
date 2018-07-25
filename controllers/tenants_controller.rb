@@ -300,4 +300,10 @@ get '/tenants/:id' do
   erb(:"tenants/show")
 end
 
-#
+# destroy
+post '/tenants/:id/delete' do
+  tenant = Tenant.new(params)
+  tenant.delete()
+  redirect to '/'
+  #where to direct after delete???
+end

@@ -15,13 +15,14 @@
       <%end%>
     </select>
 
-    <label for="smoke"></label>
+    <label for="smokers_friendly"></label>
     <select name="smokers_friendly" placeholder="Is the flat smokers friendly?" id="smoke-select">
-      <option disabled selected value="nill">Is the flat smokers friendly?</option>
-      <option value="false">No</option>
-      <option value="true">Yes</option>
+      <% for smoke_answer in @smokers_friendly %>
+      <option value="<%=smoke_answer%>" <%= 'selected' if @flat.smokers_friendly == smoke_answer%>><%=smoke_answer%></option>
+      <%end%>
     </select>
 
-    <input type="submit" value="Save changes">
+    <input type="submit" value="SAVE CHANGES">
+    <input type='submit' value="DELETE">
   </form>
 </div>
