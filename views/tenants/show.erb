@@ -11,8 +11,8 @@
   <p>Can live with animal: <%=@tenant.yes_no(@tenant.can_live_with_animal)%></p>
   <p>Smoke: <%=@tenant.yes_no(@tenant.smoke)%></p>
   <p>Can live with smokers: <%=@tenant.yes_no(@tenant.can_live_with_smokers)%></p>
-  <a href="/tenants/<%=@tenant.id%>/edit"><button>Edit</button></a>
+  <a href="/tenants/<%=@tenant.id%>/edit"><button class="blue-button button">Edit</button></a>
   <form class="" action="/tenants/<%=@tenant.id%>/delete" method="post">
-    <input type='submit' value="DELETE">
+    <input class="red-button button" type='submit' value="DELETE">
   </form>
 </section>
