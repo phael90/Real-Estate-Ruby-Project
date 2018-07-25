@@ -10,7 +10,7 @@
       <p>Smokers friendly: <%=@flat.yes_no(@flat.smokers_friendly)%></p>
     </section>
 
-    <a href="/flats/<%=@flat.id%>/add_tenant"><button>Add tenant</button></a>
+    <a href="/flats/<%=@flat.id%>/add_tenant"><button class="blue-button button" >Add tenant</button></a>
 
     <section class="manager-data">
       <%for tenant in @tenants%>
@@ -18,13 +18,13 @@
       <p>Last name: <%=tenant.last_name%></p>
       <p>Age: <%=tenant.age%></p>
       <p>Nationality: <%=tenant.nationality%></p>
-      <a href="/tenants/<%=tenant.id%>/edit"><button>Edit</button></a>
+      <a href="/tenants/<%=tenant.id%>/edit"><button class="blue-button button">Edit</button></a>
       <form class="" action="/tenants/<%=tenant.id%>/delete" method="post">
-        <input type='submit' value="DELETE">
+        <input class="red-button button" type='submit' value="DELETE">
       </form>
       <%end%>
 
     </section>
-    <a href="/tenants/new?flat_id=<%=@flat.id%>"><button></button>Add tenant</a>
+    <a href="/tenants/new?flat_id=<%=@flat.id%>"><button class="blue-button button" ></button>Add tenant</a>
   </section>
 </section>

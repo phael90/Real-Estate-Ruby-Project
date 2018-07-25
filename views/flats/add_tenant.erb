@@ -1,4 +1,4 @@
-<form action="/rentals" method="post">
+<form class= action="/rentals" method="post">
   <label for="tenant_id"></label>
   <select name="tenant_id" placeholder="Choose tenant">
 
@@ -7,5 +7,5 @@
     <%end%>
     <input type="hidden" name="flat_id" value="<%=@flat.id%>">
   </select>
-  <input type="submit" value="Add tenant">
+  <input class="blue-button button" type="submit" value="Add tenant">
 </form>
