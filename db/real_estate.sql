@@ -10,7 +10,7 @@ available_space VARCHAR(255),
 animal_friendly VARCHAR(255),
 smokers_friendly VARCHAR(255)
 );
-#booleans for true of false???
+
 CREATE TABLE tenants
 (
   id SERIAL8 PRIMARY KEY,

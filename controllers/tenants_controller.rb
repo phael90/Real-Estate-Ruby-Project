@@ -302,8 +302,7 @@ end
 
 # destroy
 post '/tenants/:id/delete' do
-  tenant = Tenant.new(params)
-  tenant.delete()
-  redirect to '/'
-  #where to direct after delete???
+  @tenant = Tenant.new(params)
+  @tenant.delete()
+  redirect to 'tenants'
 end

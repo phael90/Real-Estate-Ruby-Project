@@ -45,8 +45,8 @@ end
 
 # destroy
 post '/flats/:id/delete' do
-  flat = Flat.new(params)
-  flat.delete()
-  redirect to '/'
+  @flat = Flat.new(params)
+  @flat.delete()
+  redirect to 'flats'
     #where to direct after delete???
 end

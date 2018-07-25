@@ -1,1 +1,17 @@
-<p>this is your account</p>
+<section class="manager-data">
+  <p>ID: <%=@tenant.id%></p>
+  <p>First name: <%=@tenant.first_name%></p>
+  <p>Age: <%=@tenant.age%></p>
+  <p>Nationality: <%=@tenant.nationality%></p>
+  <p>Gender: <%=@tenant.gender%></p>
+  <p>Preferred Location: <%=@tenant.preferred_location%></p>
+  <p>Profession: <%=@tenant.profession%></p>
+  <p>Animal: <%=@tenant.animal%></p>
+  <p>Can live with animal: <%=@tenant.can_live_with_animal%></p>
+  <p>Smoke: <%=@tenant.smoke%></p>
+  <p>Can live with smokers: <%=@tenant.can_live_with_smokers%></p>
+  <a href="/tenants/<%=@tenant.id%>/edit"><button>Edit</button></a>
+  <form class="" action="/tenants/<%=@tenant.id%>/delete" method="post">
+    <input type='submit' value="DELETE">
+  </form>
+</section>
