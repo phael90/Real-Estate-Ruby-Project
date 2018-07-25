@@ -81,9 +81,9 @@ class Flat
     end
 
     def yes_no(value)
-      if value == "true"
+      if value == "t"
         return "Yes"
-      elsif value == "false"
+      elsif value == "f"
         return "No"
       end
     end

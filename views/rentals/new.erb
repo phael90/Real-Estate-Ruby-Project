@@ -1,0 +1,13 @@
+<form action="/rentals" method="post">
+  <label for="tenant_id"></label>
+  <select name="tenant" placeholder="Choose tenant">
+
+    <%for tenant in @tenants%>
+      <option value="<%=tenant.id%>"><%=tenant.name%></option>
+    <%end%>
+    <%for flat in @flats%>
+      <option value="<%=flat.id%>"><%=flat.id%></option>
+    <%end%>
+  </select>
+  <input type="submit" value="Add tenant">
+</form>

@@ -1,4 +1,4 @@
-DROP TABLE flat_matches;
+DROP TABLE rentals;
 DROP TABLE tenants;
 DROP TABLE flats;
 
@@ -29,7 +29,7 @@ CREATE TABLE tenants
 );
 
 
-CREATE TABLE flat_matches
+CREATE TABLE rentals
 (
 id SERIAL8 PRIMARY KEY,
 tenant_id INT8 REFERENCES tenants(id) ON DELETE CASCADE,

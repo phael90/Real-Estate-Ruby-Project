@@ -1,6 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative( '../models/flat_match.rb' )
+require_relative( '../models/rental.rb' )
 require_relative( '../models/flat.rb' )
 require_relative( '../models/tenant.rb' )
 

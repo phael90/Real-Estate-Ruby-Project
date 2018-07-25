@@ -1,5 +1,5 @@
 # CRUD testing console
-require_relative( '../models/flat_match.rb' )
+require_relative( '../models/rental.rb' )
 require_relative( '../models/flat.rb' )
 require_relative( '../models/tenant.rb' )
 require ( 'pry-byebug' )
@@ -99,19 +99,19 @@ tenant_3.save()
 # p Tenant.find(1)
 # Tenant.delete_all
 
-flat_match_1 = FlatMatch.new({
+rental_1 = Rental.new({
 "flat_id" => flat_1.id,
 "tenant_id" => tenant_1.id
 })
 
-flat_match_1.save()
-# flat_match_1.flat_id = 2
-# flat_match_1.update
-# flat_match_1.delete
-# p FlatMatch.all
-# p FlatMatch.find(1)
-# FlatMatch.delete_all
-# p flat_match_1.tenant()
+rental_1.save()
+# rental_1.flat_id = 2
+# rental_1.update
+# rental_1.delete
+# p Rental.all
+# p Rental.find(1)
+# Rental.delete_all
+# p rental_1.tenant()
 
 #   binding.pry
 # nil

@@ -1,1 +1,8 @@
-<p>all rentals</p>
+<%for rental in @rentals%>
+  <section class="manager-data">
+    <p>ID: <%=rental.id%></p>
+    <p>Flat ID: <%=rental.flat_id%></p>
+    <p>Tenant ID: <%=rental.tenant_id%></p>
+  </section>
+  <a href="/rentals/new"><button>Add tenant</button></a>
+<%end%>

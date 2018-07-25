@@ -1,3 +1,4 @@
+require('pry')
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/flat.rb' )
@@ -39,14 +40,30 @@ end
 
 #show
 get '/flats/:id' do
-  @flats = Flat.find(params['id'].to_i)
+  @flat = Flat.find(params['id'])
+  # binding.pry
+
+  @tenants = @flat.tenants
   erb(:"flats/show")
 end
-
 # destroy
 post '/flats/:id/delete' do
   @flat = Flat.new(params)
   @flat.delete()
   redirect to 'flats'
     #where to direct after delete???
+end
+
+#edit add tenant
+get '/flats/:id/add_tenant' do
+  @tenants = Tenant.all()
+  @flat = Flat.find(params['id'])
+  erb(:"flats/add_tenant")
+end
+
+#add_tenant update
+post '/flats/:id' do
+  @flat = Flat.new(params)
+  @flat.update()
+  redirect to "flats/#{params['id']}"
 end

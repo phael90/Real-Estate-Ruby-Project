@@ -1,6 +1,6 @@
 require_relative( '../db/sql_runner' )
 
-class FlatMatch
+class Rental
 
   attr_reader( :id )
   attr_accessor( :flat_id, :tenant_id )
@@ -12,7 +12,7 @@ class FlatMatch
   end
 
   def save()
-    sql = "INSERT INTO flat_matches
+    sql = "INSERT INTO rentals
     (
       flat_id,
       tenant_id
@@ -34,7 +34,7 @@ class FlatMatch
   end
 
   def update()
-    sql = "UPDATE flat_matches
+    sql = "UPDATE rentals
     SET
     (
       flat_id,
@@ -49,28 +49,28 @@ class FlatMatch
     end
 
     def delete()
-      sql = "DELETE FROM flat_matches
+      sql = "DELETE FROM rentals
       WHERE id = $1"
       values = [@id]
       SqlRunner.run(sql, values)
     end
 
     def self.all()
-      sql = "SELECT * FROM flat_matches"
+      sql = "SELECT * FROM rentals"
       results = SqlRunner.run( sql )
-      return results.map { |hash| FlatMatch.new( hash ) }
+      return results.map { |hash| Rental.new( hash ) }
     end
 
     def self.find( id )
-      sql = "SELECT * FROM flat_matches
+      sql = "SELECT * FROM rentals
       WHERE id = $1"
       values = [id]
       results = SqlRunner.run( sql, values )
-      return FlatMatch.new( results.first )
+      return Rental.new( results.first )
     end
 
     def self.delete_all
-      sql = "DELETE FROM flat_matches"
+      sql = "DELETE FROM rentals"
       SqlRunner.run( sql )
     end
 
