@@ -3,8 +3,12 @@
   <p>ID: <%=flat.id%></p>
   <p>Location: <%=flat.location%></p>
   <p>Available space: <%=flat.available_space%></p>
-  <p>Animal friendly: <%=flat.animal_friendly%></p>
-  <p>Smokers friendly: <%=flat.smokers_friendly%></p>
+  <p>Animal friendly: <%=flat.yes_no(flat.animal_friendly)%></p>
+  <p>Smokers friendly: <%=flat.yes_no(flat.smokers_friendly)%></p>
 </section>
 <a href="/flats/<%=flat.id%>/edit"><button>Edit</button></a>
+<form action="/flats/<%=flat.id%>/delete" method="post">
+  <input type='submit' value="DELETE">
+
+</form>
 <%end%>
