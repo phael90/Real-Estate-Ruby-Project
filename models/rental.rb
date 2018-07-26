@@ -74,5 +74,9 @@ class Rental
       SqlRunner.run( sql )
     end
 
+    def available_space
+      flat = Flat.find( @flat_id )
+      return flat.available_space
+    end
 
 end

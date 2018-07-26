@@ -25,7 +25,8 @@ CREATE TABLE tenants
   can_live_with_animal BOOLEAN,
   smoke BOOLEAN,
   can_live_with_smokers BOOLEAN,
-  flat_id INT8 REFERENCES flats(id)
+  flat_id INT8 REFERENCES flats(id),
+  occupier_status BOOLEAN
 );
 
 

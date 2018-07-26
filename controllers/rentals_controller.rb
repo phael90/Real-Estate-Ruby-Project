@@ -20,7 +20,17 @@ get '/rentals/new' do
 end
 
 post '/rentals' do
+  @flat = Flat.find(params['flat_id'])
+  if @flat.available_space == 0
+    redirect to "/flats/failed"
+  else
+  @flat.available_space -= 1
+  @flat.update()
   @rental = Rental.new(params)
+  tenant = Tenant.find(params['tenant_id'])
+  tenant.occupier_status = true
+  tenant.update()
   @rental.save
-  erb :"rentals/show"
+  redirect to "/flats"
+end
 end

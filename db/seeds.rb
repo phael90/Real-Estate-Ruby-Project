@@ -4,9 +4,11 @@ require_relative( '../models/flat.rb' )
 require_relative( '../models/tenant.rb' )
 require ( 'pry-byebug' )
 
-# Flat_match.delete_all()
-# Flat.delete_all()
-# Tenant.delete_all()
+
+Tenant.delete_all()
+Flat.delete_all()
+Rental.delete_all()
+
 
 
 
@@ -54,7 +56,7 @@ tenant_1 = Tenant.new({
   "can_live_with_animal" => "true",
   "smoke" => "true",
   "can_live_with_smokers" => "true",
-  "flat_id" => flat_1.id
+  # "flat_id" => flat_1.id
 })
 
 tenant_2 = Tenant.new({
@@ -69,7 +71,7 @@ tenant_2 = Tenant.new({
   "can_live_with_animal" => "true",
   "smoke" => "true",
   "can_live_with_smokers" => "true",
-  "flat_id" => flat_1.id
+  # "flat_id" => flat_1.id
 })
 
 tenant_3 = Tenant.new({
@@ -84,7 +86,7 @@ tenant_3 = Tenant.new({
   "can_live_with_animal" => "true",
   "smoke" => "true",
   "can_live_with_smokers" => "true",
-  "flat_id" => flat_1.id
+  # "flat_id" => flat_1.id
 })
 
 tenant_1.save()
@@ -98,13 +100,13 @@ tenant_3.save()
 # p Tenant.all
 # p Tenant.find(1)
 # Tenant.delete_all
-
-rental_1 = Rental.new({
-"flat_id" => flat_1.id,
-"tenant_id" => tenant_1.id
-})
-
-rental_1.save()
+#
+# rental_1 = Rental.new({
+# "flat_id" => flat_1.id,
+# "tenant_id" => tenant_1.id
+# })
+#
+# rental_1.save()
 # rental_1.flat_id = 2
 # rental_1.update
 # rental_1.delete

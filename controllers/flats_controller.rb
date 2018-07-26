@@ -22,6 +22,11 @@ get '/flats/new' do
   erb(:"flats/new")
 end
 
+#new
+get '/flats/failed' do
+  erb(:"flats/failed")
+end
+
 #edit
 get '/flats/:id/edit' do
   @animal_friendly = ["Yes", "No"]
@@ -57,6 +62,7 @@ end
 #edit add tenant
 get '/flats/:id/add_tenant' do
   @tenants = Tenant.all()
+  @tenants_filtered = Tenant.remove_unavailable(@tenants)
   @flat = Flat.find(params['id'])
   erb(:"flats/add_tenant")
 end

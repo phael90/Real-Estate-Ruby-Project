@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 class Tenant
 
   attr_reader( :id )
-  attr_accessor( :first_name, :last_name, :age, :nationality, :gender, :preferred_location,:profession, :animal, :can_live_with_animal, :smoke, :can_live_with_smokers)
+  attr_accessor( :first_name, :last_name, :age, :nationality, :gender, :preferred_location,:profession, :animal, :can_live_with_animal, :smoke, :can_live_with_smokers, :occupier_status)
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -18,7 +18,12 @@ class Tenant
     @can_live_with_animal = options['can_live_with_animal']
     @smoke = options['smoke']
     @can_live_with_smokers = options['can_live_with_smokers']
-    @flat_id = options['flat_id'].to_i if options['flat_id']
+    # @flat_id = options['flat_id'].to_i if options['flat_id']
+    if options['occupier_status']
+      @occupier_status = options['occupier_status']
+    else
+      @occupier_status = false
+    end
   end
 
   def save()
@@ -35,14 +40,15 @@ class Tenant
       can_live_with_animal,
       smoke,
       can_live_with_smokers,
-      flat_id
+      flat_id,
+      occupier_status
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12
+      $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13
     )
     RETURNING id"
-    values = [@first_name, @last_name, @age, @nationality, @gender, @preferred_location, @profession, @animal, @can_live_with_animal, @smoke, @can_live_with_smokers, @flat_id]
+    values = [@first_name, @last_name, @age, @nationality, @gender, @preferred_location, @profession, @animal, @can_live_with_animal, @smoke, @can_live_with_smokers, @flat_id, @occupier_status]
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
@@ -69,13 +75,14 @@ class Tenant
       can_live_with_animal,
       smoke,
       can_live_with_smokers,
-      flat_id
+      flat_id,
+      occupier_status
       ) =
       (
-        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12
+        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13
       )
-      WHERE id = $13"
-      values = [@first_name, @last_name, @age, @nationality, @gender, @preferred_location, @profession, @animal, @can_live_with_animal, @smoke, @can_live_with_smokers, @flat_id, @id]
+      WHERE id = $14"
+      values = [@first_name, @last_name, @age, @nationality, @gender, @preferred_location, @profession, @animal, @can_live_with_animal, @smoke, @can_live_with_smokers, @flat_id, @occupier_status, @id]
       SqlRunner.run(sql, values)
     end
 
@@ -103,6 +110,17 @@ class Tenant
     def self.delete_all
       sql = "DELETE FROM tenants"
       SqlRunner.run( sql )
+    end
+
+    def self.remove_unavailable(tenants)
+      future_tenants_array = []
+      for tenant in tenants
+        p tenant.occupier_status
+        if tenant.occupier_status == "f"
+          future_tenants_array << tenant
+      end
+    end
+    return future_tenants_array
     end
 
     def name
