@@ -7,13 +7,13 @@
 body
 {
   background-color: rgb(253,253,253);
-  height: 850px;
+  height: 772px;
   margin: 0;
 }
 
 header
 {
-  background-color: rgba(248,248,248,0.9);
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
   position: fixed;
@@ -34,7 +34,7 @@ header
   float: left;
   text-align: center;
   line-height: 48px;
-
+  margin-left: 34px;
 }
 
 nav
@@ -74,24 +74,28 @@ li {
   float: right;
 }
 
-main
+.content-container
 {
   background-image: url("images/background.jpg");
   background-size: cover;
+  background-position: 40% 100%;
   background-repeat: no-repeat;
   opacity: 0.8;
-  height: 566px;
+  height: 80%;
   width: 100%;
   min-height: 363px;
   min-width: 59.6875em;
   padding: 0;
   text-align: center;
   letter-spacing: 1px;
-  /* font-family: Raleway, helvetica, sans-serif; */
+  font-family: Raleway, helvetica, sans-serif;
 
   margin: 0;
 }
 
+.content-display {
+  height: 100vh;
+}
 a
 {
   text-decoration: none;
@@ -107,10 +111,37 @@ a
   padding-top: 14%;
 }
 
+.blue-button
+{
+  border: none;
+  min-width: 200px;
+  padding-top: 12px;
+  padding-bottom: 14px;
+  border-radius: 25px;
+  line-height: 1.5;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: white;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size:; 100%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 62px;
+  position: relative;
+  left: 1%;
+}
+.blue-button:hover
+{
+  color: white;
+  background: rgb(50, 80, 172);
+}
 .contenthead
 {
   background-color: rgb(248,248,248);
-  height: 100%;
   width: 100%;
   display: grid;
   text-align: center;
@@ -129,40 +160,50 @@ a
 
 .margin{
   background-color: rgb(245, 247, 250);
-  height: auto;
-  margin: 0;
+  height: 572px;
+  width: 100%;
+  margin: auto;
 }
-.border
-{
-  height: 200px;
-  margin: 0;
+
+.admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  padding-top: 176px;
 }
+
 .main{
-    background-color: rgb(248,248,248);
-    height: 100%;
-    width: 100%;
-    display: grid;
-    text-align: center;
-    display: grid;
-    margin: auto;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 1fr;
-    align-items: stretch;
-    align-content: center;
+  background-color: rgb(248,248,248);
+  height: 100%;
+  width: 100%;
+  display: grid;
+  text-align: center;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 1fr;
+  align-items: stretch;
+  align-content: center;
 }
 .admin-button {
-  width: 350px;
+  width: 450px;
   padding:20px;
   cursor: pointer;
   font-weight: bold;
   font-size:; 150%;
-  background: rgb(63, 111, 182);
+  background: white;
   color: rgb(63, 111, 182);
-  border-radius: 50px;
+  border-radius: 6px;
+  border: 1px solid;
+  vertical-align: middle;
   margin: 20px;
   text-align: center;
   line-height: 50px;
-  color: white;
+  color: #484848;
   transition: 0.1s;
   font-size: 18px;
 }
@@ -174,23 +215,31 @@ a
 
 }
 
-.admin {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 50%;
-  height: 50%;
-  margin: auto;
-}
-
 .manage
 {
-background-color: blue;
-height: auto;
+  background-color: rgb(63, 111, 182);
+  height: auto;
 }
 
-.manage-tenants
+.sign-up-form
 {
+  height: 100%;
+  margin: auto;
+  background-color: rgb(245, 247, 250);
+}
 
+.footer {
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 11px;
+  position: relative;
+  top: 10%;
+  padding: 9px;
+  text-align: center;
+  font-size: 13px;
+}
+
+#content {
+  width: 102%;
 }
