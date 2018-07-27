@@ -2,17 +2,17 @@
 
   <section class="rental-item">
 
-    <section class="manager-data">
+<div class="manage-tenants">
       <p>ID: <%=@flat.id%></p>
       <p>Location: <%=@flat.location%></p>
       <p>Available space: <%=@flat.available_space%></p>
       <p>Animal friendly: <%=@flat.yes_no(@flat.animal_friendly)%></p>
       <p>Smokers friendly: <%=@flat.yes_no(@flat.smokers_friendly)%></p>
-    </section>
+
 
     <a href="/flats/<%=@flat.id%>/add_tenant"><button class="blue-button button" >Add tenant</button></a>
 
-    <section class="manager-data">
+
       <%for tenant in @tenants%>
       <p>First name: <%=tenant.first_name%></p>
       <p>Last name: <%=tenant.last_name%></p>
@@ -20,10 +20,11 @@
       <p>Nationality: <%=tenant.nationality%></p>
       <a href="/tenants/<%=tenant.id%>/edit"><button class="blue-button button">Edit</button></a>
       <form class="" action="/tenants/<%=tenant.id%>/delete" method="post">
+
         <input class="red-button button" type='submit' value="DELETE">
       </form>
       <%end%>
 
-    </section>
+</div>
   </section>
 </section>

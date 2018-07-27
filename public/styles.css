@@ -426,12 +426,7 @@ a
   border-bottom: 1px solid white;
 }
 
-.manager-data
-{
-  margin: 100px;
-  width: 80%;
-  margin-left: 37%
-}
+
 
 .tenant-content {
   padding-top: 100px;
@@ -445,4 +440,6 @@ a
 .manage-tenants {
   width: 70%;
   margin: auto;
+  padding-top: 100px;
+  text-align: center;
 }
