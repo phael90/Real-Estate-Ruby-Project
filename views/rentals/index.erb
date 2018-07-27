@@ -1,8 +1,12 @@
-<%for rental in @rentals%>
-<section class="manager-data">
+<div class="manage-tenants">
+    <section class="tenant-content">
+  <%for rental in @rentals%>
+<div class="rental-item">
   <p>ID: <%=rental.id%></p>
   <p>Flat ID: <%=rental.flat_id%></p>
   <p>Tenant ID: <%=rental.tenant_id%></p>
   <p>available_space: <%=rental.available_space%></p>
+</div>
+  <%end%>
 </section>
-<%end%>
+</div>

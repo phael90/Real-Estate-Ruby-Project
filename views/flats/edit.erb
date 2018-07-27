@@ -3,20 +3,20 @@
   <form id="page-main-id" class="sign-up-form" action="/flats/<%=@flat.id()%>" method="POST">
 
     <label for="location"></label>
-    <input type="text" placeholder="Location" name="location" value="<%= @flat.location%>">
+    <input class="input-styling" type="text" placeholder="Location" name="location" value="<%= @flat.location%>">
 
     <label for="available_space"></label>
-    <input type="number" placeholder="Number of rooms" name="available_space" value="<%= @flat.available_space%>">
+    <input class="input-styling" type="number" placeholder="Number of rooms" name="available_space" value="<%= @flat.available_space%>">
 
     <label for="animal_friendly"></label>
-    <select name="animal_friendly" placeholder="Is the flat animal friendly?" id="animal_friendly">
+    <select class="input-styling" name="animal_friendly" placeholder="Is the flat animal friendly?" id="animal_friendly">
       <% for animal_answer in @animal_friendly %>
       <option value="<%=animal_answer%>" <%= 'selected' if @flat.animal_friendly == animal_answer%>><%=animal_answer%></option>
       <%end%>
     </select>
 
     <label for="smokers_friendly"></label>
-    <select name="smokers_friendly" placeholder="Is the flat smokers friendly?" id="smoke-select">
+    <select class="input-styling" name="smokers_friendly" placeholder="Is the flat smokers friendly?" id="smoke-select">
       <% for smoke_answer in @smokers_friendly %>
       <option value="<%=smoke_answer%>" <%= 'selected' if @flat.smokers_friendly == smoke_answer%>><%=smoke_answer%></option>
       <%end%>

@@ -1,14 +1,14 @@
-<div class="manage">
+
   <div class="manage-tenants">
+      <section class="tenant-content">
   <%for tenant in @tenants%>
-  <section class="manager-data">
+
     <p>ID: <%=tenant.id%></p>
     <p>First name: <%=tenant.first_name%></p>
     <p>Last name: <%=tenant.last_name%></p>
     <a href="/tenants/<%=tenant.id%>"><button class="grey-button button">SHOW DETAILS</button></a>
     <%end%>
   </div>
-</div>
 
 <!-- white background
 greyish font color

@@ -20,6 +20,8 @@ header
   z-index: 30;
   width: 100%;
   max-height: 50px;
+  position: absolute;
+  top: 0;
 }
 
 .logo
@@ -68,7 +70,7 @@ li a {
 nav li {
   display: inline;
   line-height: 50px;
-  padding: 8px !important;
+  padding: 8px;
   float: right;
 }
 
@@ -119,7 +121,7 @@ a
   line-height: 1.5;
   padding-left: 30px;
   padding-right: 30px;
-  background: white;
+  background: rgb(50, 80, 172);
   display: inline-block;
   margin-bottom: 0;
   font-weight: bold;
@@ -132,7 +134,65 @@ a
   position: relative;
   left: 1%;
 }
+
 .blue-button:hover
+{
+  color: white;
+  background: grey;
+}
+
+.red-button
+{
+  border: none;
+  min-width: 200px;
+  padding-top: 12px;
+  padding-bottom: 14px;
+  border-radius: 25px;
+  line-height: 1.5;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: red;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size:; 100%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  left: 1%;
+}
+
+.rental-content {
+  margin-bottom: 20px;
+}
+
+.grey-button
+{
+  border: none;
+  min-width: 200px;
+  padding-top: 12px;
+  padding-bottom: 14px;
+  border-radius: 25px;
+  line-height: 1.5;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: grey;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size:; 100%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 10px 0;
+  position: relative;
+  left: 1%;
+}
+
+.red-button:hover
 {
   color: white;
   background: rgb(50, 80, 172);
@@ -172,19 +232,20 @@ a
   align-items: center;
   justify-content: space-around;
   width: 50%;
-  height: 50%;
+  height: 35%;
   margin: auto;
 }
 
 .admin-background
 {
-  background-image: url("images/admin_background.jpg");
+  background-image: url("images/forest.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 
-.main{
+.main
+{
   background-color: rgb(248,248,248);
   height: 100%;
   width: 100%;
@@ -197,57 +258,191 @@ a
   align-items: stretch;
   align-content: center;
 }
-.admin-button {
+
+.admin-button
+{
   width: 210px;
   padding:20px;
   cursor: pointer;
   font-weight: bold;
   font-size: 150%;
   background: white;
-  color: rgb(63, 111, 182);
-  border-radius: 70px;
+  background: rgb(50, 80, 172);
+  border-radius: 7px;
   border: 1px solid;
   vertical-align: middle;
   margin: 20px;
   text-align: center;
-  line-height: 11px;
-  color: #484848;
+  line-height: 3px;
+  color: white;
   transition: 0.1s;
   font-size: 14px;
 }
 
 .admin-button:hover
 {
-  color: white;
-  background: rgb(50, 80, 172);
+  color: #484848;
+  color: rgb(63, 111, 182);
 
-}
-
-.manage
-{
-  background-color: rgb(63, 111, 182);
-  height: auto;
 }
 
 .sign-up-form
 {
-  height: 100%;
+  padding-top: 30px;
+  width: 50%;
   margin: auto;
-  background-color: rgb(245, 247, 250);
+  text-align: center;
+  display: grid;
+  grid-template-columns:1fr;
+  grid-gap: 5px;
+  width: 100px;
 }
 
-.footer {
+
+
+.footer
+{
   background-color: white;
   color: black;
   width: 100%;
   height: 11px;
   position: relative;
-  top: 10%;
+  top: 102%;
   padding: 9px;
   text-align: center;
   font-size: 13px;
 }
 
 #content {
-  width: 102%;
+  width: 104%;
+}
+
+.box-container
+{
+  margin: auto;
+  margin-top: 2%;
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: table;
+  color: #485e74;
+  line-height: 1.6;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background: rgba(0,0,0,.8);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.flats-information {
+  padding-top: 100px;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flat-container {
+
+}
+/* .sign-up-form .input-styling
+{
+  margin: auto;
+  width: 40%;
+  padding: 0px 0;
+  font-size: 16px;
+  margin-bottom: 30px;
+  border: 1px;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  margin: 20px 0;
+  background: rgba(0 ,0, 0, 0);
+  border: none;
+  border-bottom: 1px solid white;
+} */
+
+::-webkit-input-placeholder
+{
+  color: #EAEAEA;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.form-button
+{
+  padding: 10px 0px;
+  font-size: 16px;
+  background: #0078ff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 7%;
+}
+
+
+.box-container-flats
+{
+  margin: auto;
+  margin-top: 2%;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: table;
+  color: #485e74;
+  line-height: 1.6;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background: rgba(0,0,0,.8);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.sign-up-form-two .input-styling
+{
+  width: 100%;
+  padding: 0px 0;
+  font-size: 16px;
+  margin-bottom: 30px;
+  border: 1px;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  margin: 20px 0;
+  background: rgba(0 ,0, 0, 0);
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.manager-data
+{
+  margin: 100px;
+  width: 80%;
+  margin-left: 37%
+}
+
+.tenant-content {
+  padding-top: 100px;
+  margin: auto;
+  text-align: center;
+}
+
+.rental-item {
+  margin-bottom: 30px;
+}
+.manage-tenants {
+  width: 70%;
+  margin: auto;
 }

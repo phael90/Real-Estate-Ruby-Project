@@ -3,57 +3,57 @@
   <form id="page-main-id" class="sign-up-form" action="/tenants/<%=@tenant.id()%>" method="POST">
 
     <label for="first_name"></label>
-    <input type="text" placeholder="First name" name="first_name" value="<%= @tenant.first_name%>">
+    <input class="intup-styling" type="text" placeholder="First name" name="first_name" value="<%= @tenant.first_name%>">
 
     <label for="last_name"></label>
-    <input type="text" placeholder="Last name" name="last_name" value="<%= @tenant.last_name%>">
+    <input class="intup-styling" type="text" placeholder="Last name" name="last_name" value="<%= @tenant.last_name%>">
 
     <label for="age"></label>
-    <input type="number" placeholder="Age" name="age" value="<%= @tenant.age%>">
+    <input class="intup-styling" type="number" placeholder="Age" name="age" value="<%= @tenant.age%>">
 
     <label for="nationality"></label>
-    <select name="nationality" placeholder="Nationality" class="nationality-select">
+    <select class="intup-styling" name="nationality" placeholder="Nationality" class="nationality-select">
       <% for nationality in @nationalities %>
       <option value="<%=nationality%>" <%= 'selected' if @tenant.nationality == nationality%>><%=nationality%></option>
       <%end%>
     </select>
 
     <label for="gender"></label>
-    <select name="gender" placeholder="Gender" class="gender">
+    <select class="intup-styling" name="gender" placeholder="Gender" class="gender">
       <% for gender in @genders %>
       <option value="<%=gender%>" <%= 'selected' if @tenant.gender == gender%>><%=gender%></option>
       <%end%>
     </select>
 
     <label for="preferred_location"></label>
-    <input type="text" placeholder="Preferred location" name="preferred_location" value="<%= @tenant.preferred_location%>">
+    <input class="intup-styling" type="text" placeholder="Preferred location" name="preferred_location" value="<%= @tenant.preferred_location%>">
 
     <label for="profession"></label>
-    <input type="text" placeholder="Your profession" name="profession" value="<%= @tenant.profession%>">
+    <input class="intup-styling" type="text" placeholder="Your profession" name="profession" value="<%= @tenant.profession%>">
 
     <label for="animal"></label>
-    <select name="animal" placeholder="Do you have an animal?" class="animal">
+    <select class="intup-styling" name="animal" placeholder="Do you have an animal?" class="animal">
       <% for animal in @animals %>
       <option value="<%=animal%>" <%= 'selected' if @tenant.animal == animal%>><%=animal%></option>
       <%end%>
     </select>
 
     <label for="can_live_with_animal"></label>
-    <select name="can_live_with_animal" placeholder="Can you live with an animals?" id="can_live_with_animals">
+    <select class="intup-styling" name="can_live_with_animal" placeholder="Can you live with an animals?" id="can_live_with_animals">
       <% for can_live_with_animal in @can_live_with_animals %>
       <option value="<%=can_live_with_animal%>" <%= 'selected' if @tenant.can_live_with_animal == can_live_with_animal%>><%=can_live_with_animal%></option>
       <%end%>
     </select>
 
     <label for="smoke"></label>
-    <select name="smoke" placeholder="Are you a smoker?" id="smoke-select">
+    <select class="input-styling" name="smoke" placeholder="Are you a smoker?" id="smoke-select">
       <% for smoke in @smokes %>
       <option value="<%=smoke%>" <%= 'selected' if @tenant.smoke == smoke%>><%=smoke%></option>
       <%end%>
     </select>
 
     <label for="can_live_with_smokers"></label>
-    <select name="can_live_with_smokers" placeholder="Can you live with smokersrs?" id="can_live_with_smokers-select">
+    <select class="input-styling" name="can_live_with_smokers" placeholder="Can you live with smokersrs?" id="can_live_with_smokers-select">
       <% for can_live_with_smoker in @can_live_with_smokers %>
       <option value="<%=can_live_with_smoker%>" <%= 'selected' if @tenant.can_live_with_smokers == can_live_with_smoker%>><%=can_live_with_smoker%></option>
       <%end%>

@@ -1,27 +1,26 @@
-<h1>Host sign up form</h1>
-<div class="signup-page-form">
-  <form class="page-main-id" class="sign-up-form" action="/flats" method="POST">
+  <main class="box-container-flats">
+    <form class="sign-up-form" class="sign-up-form" action="/flats" method="POST">
 
-    <label for="location"></label>
-    <input type="text" placeholder="Location" name="location">
+      <label for="location"></label>
+      <input class="input-styling" type="text" placeholder="Location" name="location">
 
-    <label for="available_space"></label>
-    <input type="number" placeholder="Number of rooms" name="available_space">
+      <label for="available_space"></label>
+      <input class="input-styling" type="number" placeholder="Number of rooms" name="available_space">
 
-    <label for="animal_friendly"></label>
-    <select name="animal_friendly" placeholder="Is the flat animal friendly?" class="animal">
-      <option disabled selected value="nill">Is the flat animal friendly?</option>
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select>
+      <label for="animal_friendly"></label>
+      <select name="animal_friendly" placeholder="Is the flat animal friendly?" class="animal">
+        <option disabled selected value="nill">Is the flat animal friendly?</option>
+        <option value="false">No</option>
+        <option value="true">Yes</option>
+      </select>
 
-    <label for="smokers_friendly"></label>
-    <select name="smokers_friendly" placeholder="Is the flat smokers friendly?" class="smokers_friendly-select">
-      <option disabled selected value="nill">Is the flat smokers friendly?</option>
-      <option value="false">No</option>
-      <option value="true">Yes</option>
-    </select>
+      <label for="smokers_friendly"></label>
+      <select name="smokers_friendly" placeholder="Is the flat smokers friendly?" class="smokers_friendly-select">
+        <option disabled selected value="nill">Is the flat smokers friendly?</option>
+        <option value="false">No</option>
+        <option value="true">Yes</option>
+      </select>
 
-    <input class="blue-button button" type="submit" value="Add flat">
-  </form>
-</div>
+      <input class="form-button" type="submit" value="Add flat">
+    </form>
+  </main>
